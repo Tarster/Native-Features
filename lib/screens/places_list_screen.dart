@@ -1,4 +1,13 @@
+//Default imports
 import 'package:flutter/material.dart';
+//import 'package:provider/provider.dart';
+
+//Provider Imports
+// import './provider/great_places.dart';
+
+//Screen imports
+import '../screens/add_place_screen.dart';
+import 'add_place_screen.dart';
 
 class PlaceListScreen extends StatelessWidget {
   @override
@@ -9,11 +18,13 @@ class PlaceListScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
-            onPressed: null,
+            onPressed: (){
+              Navigator.of(context).pushNamed(AddPlaceScreen.routeName);
+            },
           )
         ],
       ),
-      body: Center(),
+      body: Center(child: CircularProgressIndicator(),),
     );
   }
 }
