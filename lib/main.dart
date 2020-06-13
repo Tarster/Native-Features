@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (_)=>GreatPlaces(),
-          child: MaterialApp(
+    return ChangeNotifierProvider(
+    create: (_)=>GreatPlaces(),
+      child: MaterialApp(
         title: 'Great Places',
         theme: ThemeData(
           primaryColor: Colors.indigo,
