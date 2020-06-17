@@ -8,6 +8,7 @@ import '../provider/great_places.dart';
 
 //Screen imports
 import '../screens/add_place_screen.dart';
+import '../screens/place_detail_screen.dart';
 
 class PlaceListScreen extends StatelessWidget {
   @override
@@ -45,9 +46,15 @@ class PlaceListScreen extends StatelessWidget {
                                   title: Text(greatplaces.items[i].title),
                                   subtitle: Text(
                                       greatplaces.items[i].location.address),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.of(context).pushNamed(
+                                        PlaceDetailScreen.routeName,
+                                        arguments: greatplaces.items[i].id);
+                                  },
                                 )),
-                child: Center(child: Text('Got no places to show,Start adding new places'),),
+                child: Center(
+                  child: Text('Got no places to show,Start adding new places'),
+                ),
               ),
       ),
     );
