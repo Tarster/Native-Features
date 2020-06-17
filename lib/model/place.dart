@@ -9,7 +9,7 @@ class PlaceLocation
   final double longtitiude;
   final String address;
 
-PlaceLocation({
+const PlaceLocation({
   @required this.latitude,
   @required this.longtitiude,
   this.address

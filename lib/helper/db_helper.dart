@@ -11,7 +11,7 @@ final dbPath = await sql.getDatabasesPath();
     return sql.openDatabase(path.join(dbPath, 'place.db'),
         onCreate: (db, version) {
       return db.execute(
-          'Create Table places(id TEXT PRIMARY KEY ,title TEXT ,image TEXT)');
+          'Create Table places(id TEXT PRIMARY KEY ,title TEXT ,image TEXT,loc_lat REAL,loc_lng REAL ,address TEXT)');
     }, version: 1);
 
   }

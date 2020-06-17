@@ -43,11 +43,11 @@ class PlaceListScreen extends StatelessWidget {
                                         FileImage(greatplaces.items[i].image),
                                   ),
                                   title: Text(greatplaces.items[i].title),
+                                  subtitle: Text(
+                                      greatplaces.items[i].location.address),
                                   onTap: () {},
                                 )),
-                child: Center(
-                  child: Text('Got no places to show,Start adding new places'),
-                ),
+                child: Center(child: Text('Got no places to show,Start adding new places'),),
               ),
       ),
     );
