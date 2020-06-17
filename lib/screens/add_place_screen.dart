@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'dart:io';
 
 import '../widgets/image_input.dart';
+import '../widgets/location_input.dart';
 
 import '../provider/great_places.dart';
 
@@ -16,17 +17,16 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
   final _titleController = TextEditingController();
   File _pickedImage;
 
-  void _selectedImage(File pickedImage)
-  {
-    _pickedImage =pickedImage;
+  void _selectedImage(File pickedImage) {
+    _pickedImage = pickedImage;
   }
 
-  void _savePlaces(){
-    if(_titleController.text.isEmpty || _pickedImage== null)
-    return;
+  void _savePlaces() {
+    if (_titleController.text.isEmpty || _pickedImage == null) return;
 
-    Provider.of<GreatPlaces>(context,listen:false).addplaces(_titleController.text, _pickedImage);
-    Navigator.of(context).pop();  
+    Provider.of<GreatPlaces>(context, listen: false)
+        .addplaces(_titleController.text, _pickedImage);
+    Navigator.of(context).pop();
   }
 
   @override
@@ -51,9 +51,14 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                       decoration: InputDecoration(labelText: 'Title'),
                       controller: _titleController,
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     ImageInput(_selectedImage),
-
+                    SizedBox(
+                      height: 10,
+                    ),
+                    LocationInput(),
                   ],
                 ),
               ),
